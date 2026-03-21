@@ -23,11 +23,11 @@ function CurrentSold() {
   const [inputSold, setInputSold] = useState("");
 
   function handleAdd(inputSold) {
-    dispatch({ type: "add", sold: inputSold });
+    dispatch({ type: "add", sold: Number(inputSold) });
     setInputSold("");
   }
   function handleWithdraw(inputSold) {
-    dispatch({ type: "withdraw", sold: inputSold });
+    dispatch({ type: "withdraw", sold: Number(inputSold) });
     setInputSold("");
   }
 
@@ -39,12 +39,14 @@ function CurrentSold() {
         style={{ marginRight: "10px" }}
       />
       <button
-        onClick={(e) => handleAdd(inputSold)}
+        onClick={(e) => handleAdd(Number(inputSold))}
         style={{ marginRight: "10px" }}
       >
         Depunere
       </button>
-      <button onClick={(e) => handleWithdraw(inputSold)}>Retragere</button>
+      <button onClick={(e) => handleWithdraw(Number(inputSold))}>
+        Retragere
+      </button>
     </>
   );
 }
