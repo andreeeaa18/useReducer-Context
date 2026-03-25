@@ -35,16 +35,20 @@ function CurrentSold() {
     <>
       <h1>Sold curent: {sold}</h1>
       <input
+        value={inputSold} //Am adaugat asta
         onChange={(e) => setInputSold(e.target.value)}
         style={{ marginRight: "10px" }}
       />
       <button
-        onClick={(e) => handleAdd(Number(inputSold))}
+        onClick={
+          (/*Am scos de aici e, e ok sa nu fie nimic */) =>
+            handleAdd(Number(inputSold))
+        }
         style={{ marginRight: "10px" }}
       >
         Depunere
       </button>
-      <button onClick={(e) => handleWithdraw(Number(inputSold))}>
+      <button onClick={() => handleWithdraw(Number(inputSold))}>
         Retragere
       </button>
     </>

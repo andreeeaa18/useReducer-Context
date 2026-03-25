@@ -8,7 +8,7 @@ function actionsReducer(number, action) {
     case "decrement":
       return number - 1;
     case "reset":
-      return (number = 0);
+      return 0;
     default:
       throw Error("Acțiune necunoscută: " + action.type);
   }
